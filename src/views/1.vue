@@ -1,12 +1,12 @@
-
 <template>
+ 
 <div>
 
 good
 
 </div>
 </template>
-<script>
+<script  >
 </script>
 <style>
 </style>
