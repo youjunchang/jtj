@@ -2,18 +2,22 @@
 <template>
   <div>
 
-kaishi  ceshi 
+kaishi  ceshi {{b}}
 
   </div>
 </template>
 
 <script lang='ts'>
-import { reactive,toRefs,onBeforeMount,onMounted} from 'vue'
+import { reactive,toRefs,ref,onBeforeMount,onMounted} from 'vue'
+import {useRoute} from "vue-router"
 export default {
     name: '',
       setup() {
+         let g=useRoute().params.userid;
+         const b=ref(g);
           console.log('1-开始创建组件-setup')
           const data= reactive({
+
 
           })
           onBeforeMount(() => {
@@ -24,7 +28,7 @@ export default {
           })
           const refData = toRefs(data);
           return {
-              ...refData,
+              ...refData,b
           }
 
       }
