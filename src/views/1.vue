@@ -9,10 +9,12 @@
 
 <script lang='ts'>
 import { reactive,toRefs,onBeforeMount,onMounted} from 'vue'
-import {useRouter } from "vue-router"
+import { useRouter} from "vue-router"
+ 
+ 
 export default {
     name: '',
-      setup() {
+    setup() {
           console.log('1-开始创建组件-setup')
           const data= reactive({
               msg:'fuckyou 你老母'
@@ -24,9 +26,9 @@ export default {
           onMounted(() => {
               console.log('3.-组件挂载到页面之后执行-------onMounted')
           })
-          const router=useRouter();
+            const router=useRouter();
           let jump=()=>{
-           router.push({name:'2',params:{userid:'2'}})
+               router.push({name:'2',params:{userid:'2'}})
           }
           const refData = toRefs(data);
           return {
